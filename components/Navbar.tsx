@@ -77,9 +77,6 @@ export default function Navbar({ items }: NavbarProps) {
         <ColorSwitcherContainer>
           <ColorSwitcher />
         </ColorSwitcherContainer>
-        <HamburgerMenuWrapper>
-          <HamburgerIcon aria-label="Toggle menu" onClick={toggle} />
-        </HamburgerMenuWrapper>
       </Content>
     </NavbarContainer>
   );
