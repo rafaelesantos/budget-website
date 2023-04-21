@@ -43,13 +43,13 @@ const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(var(--secondary));
-  min-height: 40rem;
+  background: rgb(var(--background));
+  margin-top: 5rem;
 `;
 
 const Title = styled(SectionTitle)`
-  color: rgb(var(--textSecondary));
-  margin-bottom: 2rem;
+  color: rgb(var(--text));
+  margin-bottom: 0;
 `;
 
 const Description = styled.div`

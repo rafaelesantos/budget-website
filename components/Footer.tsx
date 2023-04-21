@@ -48,39 +48,24 @@ const footerItems: FooterItems = [
 
 export default function Footer() {
   return (
-    <FooterWrapper>
+    <DarkerBackgroundContainer>
       <Container>
-        <ListContainer>
-          {footerItems.map((singleItem) => (
-            <FooterList key={singleItem.title} {...singleItem} />
-          ))}
-        </ListContainer>
         <BottomBar>
-          <ShareBar>
-            <NextLink href="https://www.twitter.com/my-saas-startup" passHref>
-              <a>
-                <TwitterIcon size={50} round={true} />
-              </a>
-            </NextLink>
-
-            <NextLink href="https://www.facebook.com/my-saas-startup" passHref>
-              <a>
-                <FacebookIcon size={50} round={true} />
-              </a>
-            </NextLink>
-
-            <NextLink href="https://www.linkedin.com/my-saas-startup" passHref>
-              <a>
-                <LinkedinIcon size={50} round={true} />
-              </a>
-            </NextLink>
-          </ShareBar>
-          <Copyright>&copy; Copyright 2021 My Saas Startup</Copyright>
+          <Copyright>&copy; Copyright {(new Date()).getFullYear()} Rafael Escaleira</Copyright>
         </BottomBar>
       </Container>
-    </FooterWrapper>
+    </DarkerBackgroundContainer>
   );
 }
+
+const DarkerBackgroundContainer = styled.div`
+  padding-bottom: 4rem;
+  background: rgb(var(--background));
+
+  & > *:not(:first-child) {
+    margin-top: 15rem;
+  }
+`;
 
 function FooterList({ title, items }: SingleFooterList) {
   return (
@@ -169,8 +154,4 @@ const BottomBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  ${media('<=tablet')} {
-    flex-direction: column;
-  }
 `;

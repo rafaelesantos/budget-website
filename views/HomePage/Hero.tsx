@@ -3,10 +3,11 @@ import styled from 'styled-components';
 import Button from 'components/Button';
 import ButtonGroup from 'components/ButtonGroup';
 import Container from 'components/Container';
-import HeroIllustration from 'components/HeroIllustation';
 import OverTitle from 'components/OverTitle';
 import { useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { media } from 'utils/media';
+import NextImage from 'next/image'
+import mypic from './app-screenshots.png'
 
 export default function Hero() {
   const { setIsModalOpened } = useNewsletterModalContext();
@@ -14,25 +15,19 @@ export default function Hero() {
   return (
     <HeroWrapper>
       <Contents>
-        <CustomOverTitle>the coolest, saas product you have ever seen</CustomOverTitle>
-        <Heading>Make your life easier with our SaaS</Heading>
+        <CustomOverTitle>rafael escaleira</CustomOverTitle>
+        <Heading>Budget, seu planejamento financeiro</Heading>
         <Description>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, tempora qui. Explicabo voluptate iure ipsum molestias
-          repudiandae perspiciatis nostrum praesentium, unde pariatur tempora magni rem. Necessitatibus facilis obcaecati ratione.
+        Com ele, você pode separar seus gastos em categorias personalizadas, definir orçamentos mensais e acompanhar suas despesas ao longo do tempo. Com uma interface amigável e fácil de usar, você poderá tomar decisões financeiras mais informadas e controlar melhor suas finanças pessoais.
         </Description>
         <CustomButtonGroup>
-          <Button onClick={() => setIsModalOpened(true)}>
-            Subscribe to the newsletter <span>&rarr;</span>
+          <Button href='https://apps.apple.com/us/app/budget/id6448043784' target='_blank'>
+            Download
           </Button>
-          <NextLink href="#whitepaper" passHref>
-            <Button transparent>
-              Features <span>&rarr;</span>
-            </Button>
-          </NextLink>
         </CustomButtonGroup>
       </Contents>
       <ImageContainer>
-        <HeroIllustration />
+        <NextImage src={mypic}/>
       </ImageContainer>
     </HeroWrapper>
   );
@@ -92,6 +87,7 @@ const Description = styled.p`
 `;
 
 const CustomOverTitle = styled(OverTitle)`
+  margin-top: 3rem;
   margin-bottom: 2rem;
 `;
 

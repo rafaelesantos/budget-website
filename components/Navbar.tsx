@@ -12,6 +12,8 @@ import Container from './Container';
 import Drawer from './Drawer';
 import { HamburgerIcon } from './HamburgerIcon';
 import Logo from './Logo';
+import NextImage from 'next/image'
+import mypic from './app-icon.png'
 
 const ColorSwitcher = dynamic(() => import('../components/ColorSwitcher'), { ssr: false });
 
@@ -69,14 +71,9 @@ export default function Navbar({ items }: NavbarProps) {
       <Content>
         <NextLink href="/" passHref>
           <LogoWrapper>
-            <Logo />
+            <NextImage src={mypic} width={40} height={40}/>
           </LogoWrapper>
         </NextLink>
-        <NavItemList>
-          {items.map((singleItem) => (
-            <NavItem key={singleItem.href} {...singleItem} />
-          ))}
-        </NavItemList>
         <ColorSwitcherContainer>
           <ColorSwitcher />
         </ColorSwitcherContainer>
